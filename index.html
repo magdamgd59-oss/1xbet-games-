@@ -5,124 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1XBET Games</title>
   <style>
-    * {margin:0;padding:0;box-sizing:border-box;}
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #000;
-      color: #fff;
+      background: radial-gradient(circle at top, #00142a, #000);
+      color: #00aaff;
       text-align: center;
       overflow-x: hidden;
-      position: relative;
-      min-height: 100vh;
-    }
-
-    /* خلفية متحركة */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;left: 0;
-      width: 100%;height: 100%;
-      background: radial-gradient(circle at 50% 50%, #001f3f, #000);
-      background-size: 200% 200%;
-      animation: moveBg 10s infinite alternate;
-      z-index: -2;
-    }
-
-    @keyframes moveBg {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-
-    header {
-      padding: 20px;
-    }
-
-    header img {
-      width: 160px;
-      filter: drop-shadow(0 0 20px #00bfff);
     }
 
     h1 {
-      font-size: 36px;
-      color: #00bfff;
-      margin-bottom: 30px;
-      text-shadow: 0 0 25px #00bfff;
+      margin-top: 40px;
+      font-size: 40px;
+      text-shadow: 0 0 25px #00aaff, 0 0 50px #0077cc;
+      animation: glow 2s ease-in-out infinite alternate;
     }
 
-    .games {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 25px;
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #0077cc; }
+      to { text-shadow: 0 0 30px #00ccff, 0 0 60px #00ccff; }
     }
 
-    .game {
-      position: relative;
-      overflow: hidden;
-      border-radius: 15px;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .game img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 15px;
-      filter: brightness(0.8);
-      transition: all 0.4s ease;
-    }
-
-    .game:hover img {
-      transform: scale(1.1);
-      filter: brightness(1);
-      box-shadow: 0 0 30px #00bfff;
-    }
-
-    .game h2 {
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      font-size: 20px;
-      color: #fff;
-      text-shadow: 0 0 10px #000;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="https://i.imgur.com/GX4Y5zU.png" alt="1XBET Logo">
-    <h1>1XBET Games</h1>
-  </header>
-
-  <div class="games">
-    <div class="game">
-      <img src="https://i.imgur.com/zf0uQ8K.png" alt="Aviator">
-      <h2>Aviator</h2>
-    </div>
-
-    <div class="game">
-      <img src="https://i.imgur.com/1Je1fLP.png" alt="Plinko">
-      <h2>Plinko</h2>
-    </div>
-
-    <div class="game">
-      <img src="https://i.imgur.com/zovxP0b.png" alt="Chicken Road">
-      <h2>Chicken Road</h2>
-    </div>
-
-    <div class="game">
-      <img src="https://i.imgur.com/Q84xKUn.png" alt="Cuchina">
-      <h2>Cuchina</h2>
-    </div>
-
-    <div class="game">
-      <img src="https://i.imgur.com/EyLtWUy.png" alt="Apple Game">
-      <h2>Apple</h2>
-    </div>
-  </div>
-</body>
-</html>
+    .logo {
+      width: 150px;
+      margin-top: 30px;

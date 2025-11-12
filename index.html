@@ -7,25 +7,84 @@
   <style>
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #00142a, #000);
-      color: #00aaff;
+      background: radial-gradient(circle at top, #001133, #000);
+      color: #00baff;
       text-align: center;
-      overflow-x: hidden;
     }
 
     h1 {
       margin-top: 40px;
-      font-size: 40px;
-      text-shadow: 0 0 25px #00aaff, 0 0 50px #0077cc;
-      animation: glow 2s ease-in-out infinite alternate;
+      font-size: 36px;
+      text-shadow: 0 0 20px #00baff;
+      animation: glow 2s infinite alternate;
     }
 
     @keyframes glow {
-      from { text-shadow: 0 0 10px #0077cc; }
-      to { text-shadow: 0 0 30px #00ccff, 0 0 60px #00ccff; }
+      from { text-shadow: 0 0 10px #00baff; }
+      to { text-shadow: 0 0 30px #00ffff; }
     }
 
-    .logo {
-      width: 150px;
+    .games {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
       margin-top: 30px;
+    }
+
+    .game {
+      background: rgba(0, 30, 60, 0.6);
+      border-radius: 20px;
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      box-shadow: 0 0 15px #00baff44;
+      transition: 0.3s;
+    }
+
+    .game:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #00ffff88;
+    }
+
+    .game img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .game h2 {
+      color: white;
+      font-size: 20px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>1XBET Games</h1>
+
+  <div class="games">
+    <div class="game">
+      <img src="https://i.imgur.com/IX9UuBl.png" alt="Aviator" />
+      <h2>Aviator</h2>
+    </div>
+    <div class="game">
+      <img src="https://i.imgur.com/JzFYiKY.png" alt="Plinko" />
+      <h2>Plinko</h2>
+    </div>
+    <div class="game">
+      <img src="https://i.imgur.com/G9MhiJj.png" alt="Chicken Road" />
+      <h2>Chicken Road</h2>
+    </div>
+    <div class="game">
+      <img src="https://i.imgur.com/o3NnqW1.png" alt="Cuchina" />
+      <h2>Cuchina</h2>
+    </div>
+    <div class="game">
+      <img src="https://i.imgur.com/vA5Qy8H.png" alt="Apple" />
+      <h2>Apple</h2>
+    </div>
+  </div>
+</body>
+</html>

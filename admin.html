@@ -1,1 +1,137 @@
 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة إدارة الألعاب</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00baff;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      text-shadow: 0 0 20px #00ffff;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00baff; }
+      to { text-shadow: 0 0 30px #00ffff; }
+    }
+
+    .upload-box {
+      background: rgba(0, 30, 60, 0.8);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 20px #00ffff55;
+    }
+
+    input[type="file"] {
+      margin: 10px 0;
+      color: white;
+    }
+
+    button {
+      background: linear-gradient(90deg, #00baff, #00ffff);
+      border: none;
+      color: black;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00ffff88;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00ffffaa;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 لوحة إدارة الصور 🎮</h1>
+
+  <div class="upload-box">
+    <h2>تغيير صورة Crash</h2>
+    <input type="file" id="crashFile" accept="image/*">
+    <button onclick="uploadImage('crash')">رفع وتحديث</button>
+  </div>
+
+  <div class="upload-box">
+    <h2>تغيير صورة Plinko</h2>
+    <input type="file" id="plinkoFile" accept="image/*">
+    <button onclick="uploadImage('plinko')">رفع وتحديث</button>
+  </div>
+
+  <div class="upload-box">
+    <h2>تغيير صورة Chicken</h2>
+    <input type="file" id="chickenFile" accept="image/*">
+    <button onclick="uploadImage('chicken')">رفع وتحديث</button>
+  </div>
+
+  <div class="upload-box">
+    <h2>تغيير صورة Cuchina</h2>
+    <input type="file" id="cuchinaFile" accept="image/*">
+    <button onclick="uploadImage('cuchina')">رفع وتحديث</button>
+  </div>
+
+  <div class="upload-box">
+    <h2>تغيير صورة Apple</h2>
+    <input type="file" id="appleFile" accept="image/*">
+    <button onclick="uploadImage('apple')">رفع وتحديث</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    // 👇 غيّر هنا بيانات Cloudinary بتاعتك
+    const CLOUD_NAME = "YOUR_CLOUD_NAME";
+    const UPLOAD_PRESET = "YOUR_UPLOAD_PRESET"; // هننشئها كمان حالًا
+
+    async function uploadImage(game) {
+      const fileInput = document.getElementById(`${game}File`);
+      const file = fileInput.files[0];
+      if (!file) return alert("اختار صورة الأول!");
+
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", UPLOAD_PRESET);
+
+      document.getElementById("result").innerText = "⏳ جاري الرفع...";
+
+      try {
+        const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+          method: "POST",
+          body: formData
+        });
+        const data = await res.json();
+
+        if (data.secure_url) {
+          document.getElementById("result").innerHTML = 
+            `✅ تم رفع الصورة! <br> اللينك الجديد:<br> <a href="${data.secure_url}" target="_blank">${data.secure_url}</a>`;
+        } else {
+          throw new Error("فشل الرفع");
+        }
+
+      } catch (err) {
+        document.getElementById("result").innerText = "❌ حدث خطأ أثناء الرفع.";
+      }
+    }
+  </script>
+</body>
+</html>

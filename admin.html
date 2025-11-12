@@ -1,99 +1,103 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>وان اكسبيت - ألعاب</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1XBET Games</title>
 <style>
   body {
     margin: 0;
-    font-family: "Tajawal", sans-serif;
-    background: radial-gradient(circle at top left, #14021c, #080014);
-    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at center, #001133, #000010);
+    color: white;
     text-align: center;
-    min-height: 100vh;
+    overflow-x: hidden;
+    animation: bgMove 10s infinite alternate ease-in-out;
   }
+
+  @keyframes bgMove {
+    from { background-position: left; }
+    to { background-position: right; }
+  }
+
   h1 {
+    font-size: 2.3em;
+    color: #33ccff;
+    text-shadow: 0 0 15px #00ffff, 0 0 30px #00ccff;
     margin-top: 30px;
-    color: #ffd700;
-    text-shadow: 0 0 15px #ffd70055;
   }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px auto;
     gap: 20px;
-    padding: 40px;
+    max-width: 900px;
   }
-  .card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 10px;
-    box-shadow: 0 0 20px #0008;
-    transition: transform 0.3s;
-  }
-  .card:hover {
-    transform: scale(1.05);
-  }
-  .card img {
-    width: 100%;
+
+  .game {
+    background: rgba(0, 10, 30, 0.8);
+    border: 1px solid #00ccff;
     border-radius: 15px;
-  }
-  .label {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-  .btn {
-    display: inline-block;
-    padding: 8px 16px;
-    background: linear-gradient(90deg, #00e5ff, #00bfff);
-    border-radius: 30px;
-    text-decoration: none;
-    color: #000;
-    font-weight: 700;
+    box-shadow: 0 0 20px #0088ff88;
+    overflow: hidden;
+    width: 200px;
     transition: 0.3s;
+    cursor: pointer;
   }
-  .btn:hover {
-    background: linear-gradient(90deg, #ffd700, #ffb700);
+
+  .game:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00ffff;
   }
+
+  .game img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+  }
+
+  .game h2 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff;
+  }
+
   footer {
-    color: #aaa;
-    padding: 20px;
+    margin-top: 50px;
+    color: #888;
+    font-size: 0.9em;
   }
 </style>
 </head>
 <body>
+  <h1>🔥 1XBET Games 🔥</h1>
+  <div class="container">
 
-  <h1>🎮 وان اكسبيت - ألعاب</h1>
-
-  <div class="grid">
-    <div class="card">
-      <img src="https://i.imgur.com/lMjYwqf.gif" alt="Crash Game" />
-      <div class="label">Crash Game</div>
-      <a class="btn" href="#">عرض التفاصيل</a>
+    <div class="game" onclick="window.location.href='https://1xbet.com/games/crash'">
+      <img src="images/crash.jpg" alt="Crash Game">
+      <h2>Crash Game</h2>
     </div>
 
-    <div class="card">
-      <img src="https://i.imgur.com/5KzH5ox.gif" alt="Plinko" />
-      <div class="label">Plinko</div>
-      <a class="btn" href="#">عرض التفاصيل</a>
+    <div class="game" onclick="window.location.href='https://1xbet.com/games/plinko'">
+      <img src="images/plinko.jpg" alt="Plinko Game">
+      <h2>Plinko</h2>
     </div>
 
-    <div class="card">
-      <img src="https://i.imgur.com/5Wk8Ksp.gif" alt="Chicken Road" />
-      <div class="label">Chicken Road</div>
-      <a class="btn" href="#">عرض التفاصيل</a>
+    <div class="game" onclick="window.location.href='https://1xbet.com/games/chickenroad'">
+      <img src="images/chicken.jpg" alt="Chicken Road">
+      <h2>Chicken Road</h2>
     </div>
 
-    <div class="card">
-      <img src="https://i.imgur.com/KxFHZME.gif" alt="Apple Game" />
-      <div class="label">Apple Game</div>
-      <a class="btn" href="#">عرض التفاصيل</a>
+    <div class="game" onclick="window.location.href='https://1xbet.com/games/apple'">
+      <img src="images/apple.jpg" alt="Apple Game">
+      <h2>Apple Game</h2>
     </div>
+
   </div>
 
-  <footer>© 2025 وان اكسبيت</footer>
-
+  <footer>© 2025 1XBET Games Portal</footer>
 </body>
 </html>

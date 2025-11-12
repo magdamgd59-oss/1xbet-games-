@@ -3,65 +3,65 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>1اكسبيت - ألعاب</title>
+<title>1XBET Games</title>
 <style>
   :root{
-    --bg1:#12021a; --bg2:#0b0820;
-    --plinko-glow: #9b6cff; --crash-glow:#ff3b3b;
-    --chicken-glow:#ffb84d; --apple-glow:#36ff99;
+    --bg1:#13021a; --bg2:#0b0820;
+    --accent1:#9b6cff; --accent2:#ff5b5b; --accent3:#ffb84d; --accent4:#36ff99;
     --card-bg: rgba(255,255,255,0.03);
   }
   *{box-sizing:border-box}
   body{
     margin:0; min-height:100vh; font-family: "Tajawal", system-ui, sans-serif;
-    background: radial-gradient(1200px 600px at 10% 10%, rgba(155,108,255,0.06), transparent),
-                radial-gradient(1000px 500px at 90% 80%, rgba(54,255,153,0.03), transparent),
-                linear-gradient(180deg,var(--bg1),var(--bg2));
+    background:
+      radial-gradient(800px 500px at 10% 10%, rgba(155,108,255,0.06), transparent),
+      radial-gradient(700px 450px at 90% 80%, rgba(54,255,153,0.03), transparent),
+      linear-gradient(180deg,var(--bg1),var(--bg2));
     color:#fff; display:flex; flex-direction:column; align-items:center;
     padding:28px 16px;
   }
 
   /* header / logo */
-  header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+  header{display:flex;align-items:center;gap:16px;margin-bottom:6px}
   .logo-box{
     width:72px;height:72px;border-radius:14px;
-    background: linear-gradient(135deg,#12021a, rgba(255,255,255,0.03));
+    background: linear-gradient(135deg,#14021c, rgba(255,255,255,0.03));
     display:flex;align-items:center;justify-content:center;
     box-shadow: 0 6px 30px rgba(0,0,0,0.6), 0 0 30px rgba(155,108,255,0.08);
   }
   .logo-text{
-    font-weight:800; font-size:20px; letter-spacing:1px;
-    color: #ffd700; text-shadow: 0 0 10px rgba(255,215,0,0.3);
+    font-weight:900; font-size:22px; letter-spacing:1px;
+    color: #ffd700; text-shadow: 0 0 12px rgba(255,215,0,0.35);
   }
-  h1{margin:0;font-size:20px;color:#fff;text-shadow:0 0 12px rgba(0,0,0,0.6)}
   .subtitle{font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px}
 
   /* grid */
   .grid{
     width:100%; max-width:1100px; margin-top:18px;
     display:grid; gap:18px;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
   }
 
   .card{
     position:relative; overflow:hidden; border-radius:16px;
     background:var(--card-bg); padding:14px; text-align:center;
-    transition:transform .35s ease, box-shadow .35s ease;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s;
     border:1px solid rgba(255,255,255,0.03);
     backdrop-filter: blur(6px);
   }
-  .card:hover{ transform: translateY(-8px) scale(1.02); box-shadow: 0 18px 50px rgba(0,0,0,0.6); }
+  .card:hover{ transform: translateY(-8px) scale(1.03); box-shadow: 0 18px 50px rgba(0,0,0,0.6); }
 
   .art{
-    width:100%; height:180px; display:flex; align-items:center; justify-content:center;
+    width:100%; height:200px; display:flex; align-items:center; justify-content:center;
     margin-bottom:12px; position:relative;
+    border-radius:12px;
+    overflow:hidden;
   }
-
-  .label{ font-size:18px; font-weight:700; margin-bottom:8px; text-shadow:0 0 8px rgba(0,0,0,0.6) }
+  .label{ font-size:18px; font-weight:800; margin-bottom:8px; text-shadow:0 0 8px rgba(0,0,0,0.6) }
 
   .btn{
     display:inline-block; text-decoration:none; padding:9px 18px; border-radius:999px;
-    font-weight:700; color:#001; background:linear-gradient(90deg,#00e5ff,#00bfff);
+    font-weight:800; color:#001; background:linear-gradient(90deg,#00e5ff,#00bfff);
     box-shadow: 0 6px 24px rgba(0,191,255,0.12); margin-top:6px;
     transition: transform .18s ease, box-shadow .18s;
   }
@@ -69,63 +69,77 @@
 
   footer{ margin-top:28px; color:rgba(255,255,255,0.5); font-size:13px }
 
-  /* --- neon glows per card --- */
-  .plinko .art{ box-shadow: 0 6px 40px rgba(155,108,255,0.08) inset, 0 0 30px rgba(155,108,255,0.04) }
-  .crash .art{ box-shadow: 0 6px 40px rgba(255,59,59,0.07) inset }
-  .chicken .art{ box-shadow: 0 6px 40px rgba(255,184,77,0.06) inset }
-  .apple .art{ box-shadow: 0 6px 40px rgba(54,255,153,0.06) inset }
+  /* neon glows */
+  .plinko .art{ box-shadow: 0 6px 40px rgba(155,108,255,0.06) inset }
+  .crash .art{ box-shadow: 0 6px 40px rgba(255,59,59,0.06) inset }
+  .chicken .art{ box-shadow: 0 6px 40px rgba(255,184,77,0.05) inset }
+  .apple .art{ box-shadow: 0 6px 40px rgba(54,255,153,0.05) inset }
 
-  /* Responsive small */
-  @media (max-width:420px){
+  /* small responsive tweaks */
+  @media (max-width:460px){
     .art{ height:150px }
     .label{ font-size:16px }
     .logo-text{ font-size:18px }
   }
 
-  /* ========== animated SVG styles ========== */
-  /* PLINKO - falling balls */
-  .plinko .ball{ fill: var(--plinko-glow); filter: drop-shadow(0 8px 16px rgba(155,108,255,0.6)); }
-  .plinko .drop1 { animation: plinkoDrop 2.4s ease-in-out infinite; animation-delay:0s }
-  .plinko .drop2 { animation: plinkoDrop 2.6s ease-in-out infinite; animation-delay:.4s }
-  .plinko .drop3 { animation: plinkoDrop 2.8s ease-in-out infinite; animation-delay:.8s }
+  /* animation utilities */
+  .zoomGlow { transform-origin:center; transition: transform .45s ease, filter .45s; }
+  .card:hover .zoomGlow { transform: scale(1.08); filter: drop-shadow(0 14px 30px rgba(0,191,255,0.18)); }
+
+  /* specific svg animations (Plinko/Crash/Chicken/Apple) */
+  /* plinko balls */
+  .plinko .ball{ fill: var(--accent1); filter: drop-shadow(0 8px 18px rgba(155,108,255,0.6)); }
+  .plinko .drop1 { animation: plinkoDrop 2.6s linear infinite; animation-delay:0 }
+  .plinko .drop2 { animation: plinkoDrop 2.6s linear infinite; animation-delay:0.5s }
+  .plinko .drop3 { animation: plinkoDrop 2.6s linear infinite; animation-delay:1s }
   @keyframes plinkoDrop {
-    0% { transform: translateY(-60px) scale(.9); opacity:0 }
-    10% { opacity:1 }
-    50% { transform: translateY(60px) scale(1.05) }
-    90% { opacity:1 }
-    100% { transform: translateY(140px) scale(.9); opacity:0 }
+    0%{ transform: translateY(-80px) }
+    35%{ transform: translateY(10px) }
+    70%{ transform: translateY(80px) }
+    100%{ transform: translateY(220px) }
   }
 
-  /* CRASH - rocket/plane pulse and fly */
-  .crash .rocket { transform-origin:50% 50%; animation: rocketFloat 3s ease-in-out infinite; filter: drop-shadow(0 12px 24px rgba(255,59,59,0.5)); }
+  /* rocket float */
+  .crash .rocket { animation: rocketFloat 3s ease-in-out infinite; transform-origin:center; filter: drop-shadow(0 12px 28px rgba(255,59,59,0.45)); }
   @keyframes rocketFloat {
-    0% { transform: translateY(0) rotate(-2deg) }
-    50%{ transform: translateY(-12px) rotate(2deg) }
-    100%{ transform: translateY(0) rotate(-2deg) }
+    0%{ transform: translateY(0) rotate(-3deg) } 50%{ transform: translateY(-12px) rotate(2deg) } 100%{ transform: translateY(0) rotate(-3deg) }
   }
-  .crash .trail { animation: trailPulse 1.6s linear infinite; }
-  @keyframes trailPulse {
-    0%{ opacity:.35 } 50%{ opacity:1 } 100%{ opacity:.35 }
-  }
+  .crash .flame { animation: flamePulse 0.9s linear infinite; transform-origin:center; }
+  @keyframes flamePulse { 0%{ opacity:.45 } 50%{ opacity:1 } 100%{ opacity:.45 } }
 
-  /* CHICKEN - bob / hop */
-  .chicken .chick { animation: chickHop 2.4s ease-in-out infinite; filter: drop-shadow(0 10px 20px rgba(255,184,77,0.45)); }
-  @keyframes chickHop {
-    0%{ transform: translateY(0) rotate(-1deg) } 50%{ transform: translateY(-10px) rotate(1deg) } 100%{ transform: translateY(0) rotate(-1deg) }
-  }
+  /* chick hop */
+  .chicken .chick { animation: chickHop 2.4s ease-in-out infinite; filter: drop-shadow(0 8px 18px rgba(255,184,77,0.45)); }
+  @keyframes chickHop { 0%{ transform: translateY(0) } 50%{ transform: translateY(-12px) } 100%{ transform: translateY(0) } }
 
-  /* APPLE - spin & bounce */
-  .apple .fruit { animation: appleSpin 3s cubic-bezier(.4,.1,.3,1) infinite; filter: drop-shadow(0 14px 30px rgba(54,255,153,0.45)); }
-  @keyframes appleSpin {
-    0%{ transform: rotate(0) translateY(0) } 45%{ transform: rotate(12deg) translateY(-8px) } 100%{ transform: rotate(0) translateY(0) }
+  /* apple bounce rotate */
+  .apple .fruit { animation: appleSpin 3s cubic-bezier(.4,.1,.3,1) infinite; filter: drop-shadow(0 10px 24px rgba(54,255,153,0.45)); }
+  @keyframes appleSpin { 0%{ transform: rotate(0) translateY(0) } 45%{ transform: rotate(12deg) translateY(-10px) } 100%{ transform: rotate(0) translateY(0) } }
+
+  /* subtle entrance */
+  .card{ opacity:0; transform: translateY(18px); animation: popIn .6s ease forwards; }
+  .card:nth-child(1){ animation-delay:.08s }
+  .card:nth-child(2){ animation-delay:.16s }
+  .card:nth-child(3){ animation-delay:.24s }
+  .card:nth-child(4){ animation-delay:.32s }
+  @keyframes popIn { to { opacity:1; transform: translateY(0) } }
+
+  /* music controls */
+  .player {
+    position: fixed; right:16px; bottom:16px; z-index:9999;
+    background: linear-gradient(90deg,#081222,#0b1a2a);
+    border-radius:12px; padding:10px; display:flex; gap:8px; align-items:center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border:1px solid rgba(255,255,255,0.04)
   }
+  .player button{ background:transparent;border:none;color:#fff;font-weight:700; cursor:pointer }
+  .player input[type="range"]{ width:120px }
+  .player .label{ font-size:12px;color:#cfefff;margin-left:6px }
 </style>
 </head>
 <body>
 
 <header>
   <div class="logo-box" aria-hidden="true">
-    <!-- small neon icon -->
     <svg width="46" height="46" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="2" y="2" width="20" height="20" rx="5" fill="#0b1220"/>
       <path d="M6 12h12" stroke="#ffd700" stroke-width="1.6" stroke-linecap="round"/>
@@ -135,7 +149,7 @@
   </div>
 
   <div>
-    <div class="logo-text">1اكسبيت</div>
+    <div class="logo-text">1XBET Games</div>
     <div class="subtitle">واجهة الألعاب — اختار لعبتك واستمتع</div>
   </div>
 </header>
@@ -145,20 +159,17 @@
   <!-- PLINKO -->
   <section class="card plinko" aria-labelledby="plinko-title">
     <div class="art" aria-hidden="true">
-      <!-- simple plinko board with animated balls -->
-      <svg viewBox="0 0 300 180" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
-        <rect x="0" y="0" width="300" height="180" rx="14" fill="transparent"/>
-        <!-- pegs (visual only) -->
-        <g opacity="0.18" stroke="#9b6cff" stroke-width="1">
-          <circle cx="60" cy="50" r="2"/><circle cx="120" cy="50" r="2"/><circle cx="180" cy="50" r="2"/><circle cx="240" cy="50" r="2"/>
-          <circle cx="90" cy="80" r="2"/><circle cx="150" cy="80" r="2"/><circle cx="210" cy="80" r="2"/>
-          <circle cx="60" cy="110" r="2"/><circle cx="120" cy="110" r="2"/><circle cx="180" cy="110" r="2"/><circle cx="240" cy="110" r="2"/>
+      <!-- animated plinko (SVG) -->
+      <svg viewBox="0 0 300 200" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" class="zoomGlow">
+        <rect x="0" y="0" width="300" height="200" rx="12" fill="transparent"/>
+        <g opacity="0.12" stroke="#9b6cff" stroke-width="1">
+          <circle cx="40" cy="50" r="2"/><circle cx="80" cy="50" r="2"/><circle cx="120" cy="50" r="2"/><circle cx="160" cy="50" r="2"/><circle cx="200" cy="50" r="2"/><circle cx="240" cy="50" r="2"/>
+          <circle cx="60" cy="85" r="2"/><circle cx="100" cy="85" r="2"/><circle cx="140" cy="85" r="2"/><circle cx="180" cy="85" r="2"/><circle cx="220" cy="85" r="2"/>
         </g>
-        <!-- falling balls -->
         <g>
-          <circle class="ball drop1" cx="80" cy="20" r="8"/>
-          <circle class="ball drop2" cx="140" cy="10" r="9"/>
-          <circle class="ball drop3" cx="200" cy="18" r="7"/>
+          <circle class="ball drop1" cx="80" cy="10" r="9"/>
+          <circle class="ball drop2" cx="140" cy="6" r="8"/>
+          <circle class="ball drop3" cx="200" cy="14" r="10"/>
         </g>
       </svg>
     </div>
@@ -169,21 +180,19 @@
   <!-- CRASH -->
   <section class="card crash" aria-labelledby="crash-title">
     <div class="art" aria-hidden="true">
-      <svg viewBox="0 0 300 180" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
-        <!-- sky bg glow -->
+      <svg viewBox="0 0 300 200" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" class="zoomGlow">
         <defs>
-          <linearGradient id="g1" x1="0" x2="1">
-            <stop offset="0" stop-color="#ff7a7a" stop-opacity="0.9"/>
-            <stop offset="1" stop-color="#ff2b2b" stop-opacity="0.6"/>
+          <linearGradient id="rg1" x1="0" x2="1">
+            <stop offset="0" stop-color="#ff7a7a" stop-opacity="1"/>
+            <stop offset="1" stop-color="#ff2b2b" stop-opacity="0.9"/>
           </linearGradient>
         </defs>
-        <!-- rocket -->
-        <g transform="translate(140,70)" class="rocket">
-          <ellipse cx="0" cy="44" rx="20" ry="6" fill="rgba(255,59,59,0.08)"/>
-          <path d="M0,-40 L12,0 L0,12 L-12,0 Z" fill="url(#g1)"/>
-          <circle cx="0" cy="-14" r="4" fill="#fff7"/>
-          <g class="trail" opacity=".8">
-            <ellipse cx="-2" cy="6" rx="6" ry="18" fill="#ff6b6b"/>
+        <g transform="translate(150,80)" class="rocket">
+          <ellipse cx="0" cy="48" rx="28" ry="8" fill="rgba(255,59,59,0.06)"/>
+          <path d="M0,-46 L14,4 L0,18 L-14,4 Z" fill="url(#rg1)"/>
+          <circle cx="0" cy="-14" r="5" fill="#fff7"/>
+          <g class="flame">
+            <ellipse cx="-2" cy="18" rx="8" ry="22" fill="#ff6b6b"/>
           </g>
         </g>
       </svg>
@@ -195,17 +204,15 @@
   <!-- CHICKEN -->
   <section class="card chicken" aria-labelledby="chicken-title">
     <div class="art" aria-hidden="true">
-      <svg viewBox="0 0 300 180" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
-        <!-- ground -->
-        <rect x="0" y="140" width="300" height="40" fill="rgba(0,0,0,0.15)"/>
-        <!-- chick -->
+      <svg viewBox="0 0 300 200" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" class="zoomGlow">
+        <rect x="0" y="150" width="300" height="50" fill="rgba(0,0,0,0.18)"/>
         <g transform="translate(150,90)" class="chick">
-          <ellipse cx="0" cy="28" rx="36" ry="28" fill="#ffcf7a"/>
+          <ellipse cx="0" cy="28" rx="34" ry="26" fill="#ffcf7a"/>
           <circle cx="-10" cy="4" r="12" fill="#ffd98a"/>
           <circle cx="10" cy="4" r="10" fill="#ffd98a"/>
           <circle cx="-6" cy="2" r="2" fill="#000"/>
           <circle cx="8" cy="2" r="2" fill="#000"/>
-          <path d="M0,12 q6 6 12 2" stroke="#ff8c00" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M-2,14 q6 6 12 2" stroke="#ff8c00" stroke-width="2" fill="none" stroke-linecap="round"/>
         </g>
       </svg>
     </div>
@@ -216,8 +223,8 @@
   <!-- APPLE -->
   <section class="card apple" aria-labelledby="apple-title">
     <div class="art" aria-hidden="true">
-      <svg viewBox="0 0 300 180" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
-        <g transform="translate(150,80)" class="fruit">
+      <svg viewBox="0 0 300 200" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" class="zoomGlow">
+        <g transform="translate(150,95)" class="fruit">
           <circle cx="0" cy="0" r="36" fill="#00ff88"/>
           <ellipse cx="-8" cy="-8" rx="18" ry="10" fill="#ffffff22"/>
           <path d="M-6,-32 q6 -10 16 -6" stroke="#117a3a" stroke-width="4" fill="none" stroke-linecap="round"/>
@@ -231,7 +238,57 @@
 
 </main>
 
-<footer>© 2025 1اكسبيت — تصميم سريع</footer>
+<footer>© 2025 1XBET Games</footer>
+
+<!-- Music player (uses bgm.mp3 in repo root). If you want external file, replace src value -->
+<div class="player" role="region" aria-label="Music player">
+  <button id="playBtn" title="Play/Pause">▶</button>
+  <input id="vol" type="range" min="0" max="1" step="0.01" value="0.18" />
+  <div class="label">موسيقى خلفية</div>
+</div>
+
+<audio id="bgm" loop preload="auto">
+  <source src="bgm.mp3" type="audio/mpeg">
+  <!-- لو لم ترفع ملف bgm.mp3، الصوت لن يعمل. يمكنك رفع أي ملف صوتي باسم bgm.mp3 في نفس مجلد الريبو -->
+</audio>
+
+<script>
+  // player logic
+  const audio = document.getElementById('bgm');
+  const playBtn = document.getElementById('playBtn');
+  const vol = document.getElementById('vol');
+
+  // set initial volume
+  audio.volume = parseFloat(vol.value);
+
+  // play/pause toggling (note: autoplay may be blocked by browser; user must press once)
+  playBtn.addEventListener('click', async () => {
+    if (audio.paused) {
+      try {
+        await audio.play();
+        playBtn.textContent = '⏸';
+      } catch (e) {
+        alert('المتصفح منع التشغيل التلقائي — اضغط مرة أخرى لتشغيل الصوت.');
+      }
+    } else {
+      audio.pause();
+      playBtn.textContent = '▶';
+    }
+  });
+
+  vol.addEventListener('input', () => {
+    audio.volume = parseFloat(vol.value);
+  });
+
+  // nice: play muted on first user gesture automatically
+  document.addEventListener('click', function once(){
+    if (audio.paused) {
+      // don't force play; just set up to respect user gesture
+      // audio.play().then(()=>{}).catch(()=>{});
+    }
+    document.removeEventListener('click', once);
+  });
+</script>
 
 </body>
 </html>

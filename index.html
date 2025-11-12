@@ -1,103 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1XBET Games</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle at center, #001133, #000010);
-    color: white;
-    text-align: center;
-    overflow-x: hidden;
-    animation: bgMove 10s infinite alternate ease-in-out;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1XBET Games</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #001133, #000);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+      animation: bgMove 10s infinite alternate;
+    }
 
-  @keyframes bgMove {
-    from { background-position: left; }
-    to { background-position: right; }
-  }
+    @keyframes bgMove {
+      from { background-position: 0 0; }
+      to { background-position: 100% 100%; }
+    }
 
-  h1 {
-    font-size: 2.5em;
-    color: #33ccff;
-    text-shadow: 0 0 15px #00ffff, 0 0 40px #00ccff;
-    margin-top: 30px;
-  }
+    h1 {
+      font-size: 2.5em;
+      margin-top: 40px;
+      color: #33ccff;
+      text-shadow: 0 0 25px #00ffff;
+    }
 
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 40px auto;
-    gap: 25px;
-    max-width: 900px;
-  }
+    .games-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 20px;
+      justify-items: center;
+    }
 
-  .game {
-    background: rgba(0, 10, 30, 0.8);
-    border: 1px solid #00ccff;
-    border-radius: 20px;
-    box-shadow: 0 0 20px #0088ff88;
-    overflow: hidden;
-    width: 220px;
-    transition: 0.3s;
-    cursor: pointer;
-  }
+    .game {
+      background: rgba(0, 0, 50, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 0 20px #00ffff;
+      overflow: hidden;
+      width: 250px;
+      transition: 0.4s;
+      cursor: pointer;
+    }
 
-  .game:hover {
-    transform: scale(1.07);
-    box-shadow: 0 0 35px #00ffff;
-  }
+    .game:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 35px #33ccff;
+    }
 
-  .game img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-  }
+    .game img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
 
-  .game h2 {
-    margin: 10px 0;
-    font-size: 1.2em;
-    color: #00ffff;
-    text-shadow: 0 0 8px #00ffff;
-  }
+    .game-name {
+      padding: 10px 0;
+      font-size: 1.3em;
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffff;
+    }
 
-  footer {
-    margin-top: 50px;
-    color: #888;
-    font-size: 0.9em;
-  }
-</style>
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
+
   <h1>🔥 1XBET Games 🔥</h1>
-  <div class="container">
 
-    <div class="game" onclick="window.location.href='https://1xbet.com/games/crash'">
-      <img src="https://cdn.pixabay.com/photo/2017/08/30/12/45/explosion-2697506_1280.jpg" alt="Crash Game">
-      <h2>Crash Game</h2>
+  <div class="games-container">
+    <div class="game">
+      <img src="https://i.ibb.co/vvRSmXv/crashgame.gif" alt="Crash Game">
+      <div class="game-name">Crash Game</div>
     </div>
 
-    <div class="game" onclick="window.location.href='https://1xbet.com/games/plinko'">
-      <img src="https://cdn.pixabay.com/photo/2016/03/09/15/10/balls-1245723_1280.jpg" alt="Plinko Game">
-      <h2>Plinko</h2>
+    <div class="game">
+      <img src="https://i.ibb.co/LZJYPLX/plinko.gif" alt="Plinko Game">
+      <div class="game-name">Plinko</div>
     </div>
 
-    <div class="game" onclick="window.location.href='https://1xbet.com/games/chickenroad'">
-      <img src="https://cdn.pixabay.com/photo/2017/01/31/13/13/road-2028429_1280.jpg" alt="Chicken Road">
-      <h2>Chicken Road</h2>
+    <div class="game">
+      <img src="https://i.ibb.co/FmB5B9F/chickenroad.gif" alt="Chicken Road">
+      <div class="game-name">Chicken Road</div>
     </div>
 
-    <div class="game" onclick="window.location.href='https://1xbet.com/games/apple'">
-      <img src="https://cdn.pixabay.com/photo/2016/08/11/08/55/apple-1589874_1280.jpg" alt="Apple Game">
-      <h2>Apple Game</h2>
+    <div class="game">
+      <img src="https://i.ibb.co/Yy5tb4t/applegame.gif" alt="Apple Game">
+      <div class="game-name">Apple Game</div>
     </div>
-
   </div>
 
-  <footer>© 2025 1XBET Games Portal</footer>
+  <footer>
+    © 2025 1XBET Games Portal
+  </footer>
+
 </body>
 </html>
